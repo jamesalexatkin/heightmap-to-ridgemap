@@ -1,3 +1,7 @@
-/heightmaps
-/output
+/heightmaps/*
+/output/*
 program.py
+
+# Unignore
+!/heightmaps/ireland.png
+!/output/ir.png
