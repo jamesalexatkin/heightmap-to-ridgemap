@@ -1,6 +1,8 @@
+# Ignore
 /heightmaps/*
 /output/*
 program.py
+__pycache__/
 
 # Unignore
 !/heightmaps/ireland.png
