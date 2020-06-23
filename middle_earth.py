@@ -7,11 +7,11 @@ from ridge_map import RidgeMap
 from heightmap import get_image_dims, read_image
 
 
-HEIGHTMAP_FILE = "heightmaps/los_santos.png"  # input file
-OUTPUT_FILE = "output/los_santos.png"  # output file
+HEIGHTMAP_FILE = "heightmaps/middle_earth.png"  # input file
+OUTPUT_FILE = "output/middle_earth.png"  # output file
 
-NUM_LINES = 80  # ideal number of lines to include in ridge map
-X_RESOLUTION = 2 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 data points are included)
+NUM_LINES = 100  # ideal number of lines to include in ridge map
+X_RESOLUTION = 1 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 data points are included)
 
 (Y_DIM, X_DIM) = get_image_dims(HEIGHTMAP_FILE)  # use dims from original file
 # (y_dim, x_dim) = (1080, 1920) # custom dims
@@ -26,19 +26,19 @@ rm = RidgeMap()
 values = read_image(HEIGHTMAP_FILE, NUM_LINES, X_RESOLUTION)
 
 values = rm.preprocess(values=values,
-                       water_ntile=40,
+                       water_ntile=20,
                        lake_flatness=2,
-                       vertical_ratio=40)
+                       vertical_ratio=30)
 
 rm.plot_map(values=values,
             label='',
             label_y=0.2,
             label_x=0.2,
             label_size=20,
-            linewidth=10,
-            line_color=plt.get_cmap('cool'),
+            linewidth=1,
+            line_color=np.array([114, 90, 52])/255,
             kind='gradient',
-            background_color=np.array([65, 74, 76])/255,
+            background_color=np.array([224, 209, 168])/255,
             ax=ax)
 
 # Remove margins around image

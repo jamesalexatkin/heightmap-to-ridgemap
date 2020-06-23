@@ -9,8 +9,16 @@ This project enables the creation of ridge maps from height maps. It uses the [`
 ### Los Santos, _GTA V_
 <img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/los_santos.png"/>
 
+### Middle Earth
+<img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/middle_earth.png"/>
+
 
 
 
 
 ## 🙏 Acknowledgements
+
+Heightmaps:
+* Europe - [pAter](https://www.tt-forums.net/viewtopic.php?f=60&t=58325&view=previous)
+* Los Santos - [poton](https://old.reddit.com/r/GTAV/comments/2e30dh/gta_v_heightmap/)
+* Middle Earth - [Third Age - Total War Mod Team](https://www.moddb.com/mods/third-age-total-war)
