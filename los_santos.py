@@ -7,8 +7,8 @@ from ridge_map import RidgeMap
 from heightmap import get_image_dims, read_image
 
 
-heightmap_file = "heightmaps/europe.png"  # input file
-output_file = "output/europe.png"  # output file
+heightmap_file = "heightmaps/los_santos.png"  # input file
+output_file = "output/los_santos.png"  # output file
 
 num_lines = 80  # ideal number of lines to include in ridge map
 x_resolution = 2 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 data points are included)
@@ -17,7 +17,7 @@ x_resolution = 2 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 da
 # (y_dim, x_dim) = (1080, 1920) # custom dims
 
 DPI = 96  # DPI of my monitor, use link to find out: https://www.infobyip.com/detectmonitordpi.php
-SCALING_FACTOR = 1  # Factor to scale output image by
+SCALING_FACTOR = 0.2  # Factor to scale output image by
 
 fig, ax = plt.subplots(figsize=(x_dim/DPI, y_dim/DPI), dpi=DPI)
 
@@ -35,8 +35,8 @@ rm.plot_map(values=values,
             label_y=0.2,
             label_x=0.2,
             label_size=20,
-            linewidth=1,
-            line_color=plt.get_cmap('summer'),
+            linewidth=10,
+            line_color=plt.get_cmap('cool'),
             kind='gradient',
             background_color=np.array([65, 74, 76])/255,
             ax=ax)
