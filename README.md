@@ -6,6 +6,9 @@ This project enables the creation of ridge maps from height maps. It uses the [`
 
 ## 🗺️ Examples
 
+### Los Santos, _GTA V_
+<img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/los_santos.png"/>
+
 
 
 
