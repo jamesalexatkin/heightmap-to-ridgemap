@@ -2,5 +2,7 @@
 /old
 program.py
 __pycache__/
+tamriel.*
+mata_nui.*
 
 # Unignore
