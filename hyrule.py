@@ -20,7 +20,7 @@ X_RESOLUTION = 1 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 da
 DPI = 96  # DPI of my monitor, use link to find out: https://www.infobyip.com/detectmonitordpi.php
 SCALING_FACTOR = 2  # Factor to scale output image by
 
-fig, ax = plt.subplots(figsize=(X_DIM/DPI, Y_DIM/DPI), dpi=DPI)
+fig, ax = plt.subplots(figsize=(X_DIM*SCALING_FACTOR/DPI, Y_DIM*SCALING_FACTOR/DPI), dpi=DPI)
 
 rm = RidgeMap()
 
@@ -29,7 +29,7 @@ values = read_image(HEIGHTMAP_FILE, NUM_LINES, X_RESOLUTION)
 values = rm.preprocess(values=values,
                        water_ntile=20,
                        lake_flatness=0,
-                       vertical_ratio=40)
+                       vertical_ratio=60)
 
 # Custom matplotlib colormap for BotW
 botw_cmap = LinearSegmentedColormap.from_list("botw", 
