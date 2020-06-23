@@ -17,7 +17,7 @@ X_RESOLUTION = 1 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 da
 # (y_dim, x_dim) = (1080, 1920) # custom dims
 
 DPI = 96  # DPI of my monitor, use link to find out: https://www.infobyip.com/detectmonitordpi.php
-SCALING_FACTOR = 0.2  # Factor to scale output image by
+SCALING_FACTOR = 1  # Factor to scale output image by
 
 fig, ax = plt.subplots(figsize=(X_DIM/DPI, Y_DIM/DPI), dpi=DPI)
 
