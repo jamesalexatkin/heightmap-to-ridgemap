@@ -12,6 +12,7 @@ def read_image(img_file, num_lines, x_resolution):
     image_values = []
 
     for i in reversed(range(img.shape[0])):
+        # if (i % line_interval) == 0 and len(image_values) < num_lines:
         if (i % line_interval) == 0:
             row_values = []
             for j in range(img.shape[1]):

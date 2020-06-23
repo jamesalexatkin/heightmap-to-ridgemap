@@ -7,3 +7,5 @@ __pycache__/
 # Unignore
 !/heightmaps/ireland.png
 !/output/ir.png
+!/heightmaps/europe.png
+!/output/europe.png
