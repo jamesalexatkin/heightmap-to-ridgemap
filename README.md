@@ -9,8 +9,8 @@ This project enables the creation of ridge maps from height maps. It uses the [`
 ### Los Santos, _GTA V_
 <img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/los_santos.png"/>
 
-### Middle Earth
-<img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/middle_earth.png"/>
+### Middle Earth, _Tolkien's Legendarium_
+<img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/middle_earth2.png"/>
 
 ### Hyrule, _The Legend of Zelda: Breath of the Wild_
 <img src="https://github.com/jamesalexatkin/heightmap-to-ridgemap/raw/master/output/hyrule.png"/>

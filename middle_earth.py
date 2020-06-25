@@ -3,14 +3,15 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 from ridge_map import RidgeMap
-
+import matplotlib.colors as colors
 from heightmap import get_image_dims, read_image
+import palettable
 
 
 HEIGHTMAP_FILE = "heightmaps/middle_earth.png"  # input file
-OUTPUT_FILE = "output/middle_earth.png"  # output file
+OUTPUT_FILE = "output/middle_earth2.png"  # output file
 
-NUM_LINES = 100  # ideal number of lines to include in ridge map
+NUM_LINES = 150  # ideal number of lines to include in ridge map
 X_RESOLUTION = 1 # "resolution" in x direction (i.e. for resolution 2, 1 in 2 data points are included)
 
 (Y_DIM, X_DIM) = get_image_dims(HEIGHTMAP_FILE)  # use dims from original file
@@ -30,15 +31,30 @@ values = rm.preprocess(values=values,
                        lake_flatness=2,
                        vertical_ratio=30)
 
+# Function to crop a colormap between two points
+def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
+    new_cmap = colors.LinearSegmentedColormap.from_list(
+        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
+        cmap(np.linspace(minval, maxval, n)))
+    return new_cmap
+
+cmap = palettable.cmocean.sequential.Turbid_3_r.mpl_colormap
+new_cmap = truncate_colormap(cmap, 0.3, 0.6)
+
 rm.plot_map(values=values,
             label='',
             label_y=0.2,
             label_x=0.2,
             label_size=20,
             linewidth=1,
-            line_color=np.array([114, 90, 52])/255,
-            kind='gradient',
-            background_color=np.array([224, 209, 168])/255,
+            # line_color=np.array([114, 90, 52])/255, # light brown
+            # line_color=plt.get_cmap('pink'),
+            line_color=new_cmap,
+            kind='elevation',
+            # background_color=np.array([65, 74, 76])/255, # dark grey
+            background_color=np.array([224, 209, 168])/255, # light brown
+            # background_color=np.array([114, 90, 52])/255, # dark brown
+            # background_color=np.array([243, 243, 243])/255,
             ax=ax)
 
 # Remove margins around image
